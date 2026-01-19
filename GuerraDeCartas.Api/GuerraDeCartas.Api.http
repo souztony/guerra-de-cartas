@@ -1,0 +1,6 @@
+@GuerraDeCartas.Api_HostAddress = http://localhost:5032
+
+GET {{GuerraDeCartas.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
