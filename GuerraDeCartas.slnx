@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="GuerraDeCartas.Api/GuerraDeCartas.Api.csproj" />
+  <Project Path="GuerraDeCartas.Application/GuerraDeCartas.Application.csproj" />
+  <Project Path="GuerraDeCartas.Domain/GuerraDeCartas.Domain.csproj" />
+  <Project Path="GuerraDeCartas.Infrastructure/GuerraDeCartas.Infrastructure.csproj" />
+</Solution>
