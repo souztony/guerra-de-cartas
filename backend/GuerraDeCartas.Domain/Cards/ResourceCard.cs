@@ -1,9 +1,15 @@
+using GuerraDeCartas.Domain.Tactics;
+
 namespace GuerraDeCartas.Domain.Cards;
 
-public abstract class ResourceCard : Card
+public sealed class ResourceCard : Card
 {
-    protected ResourceCard(string name)
-        : base(name, CardType.Resource)
+    public ResourceCard(
+        Guid id,
+        string name,
+        Tactic tactic,
+        string image)
+        : base(id, name, Enums.CardType.Resource, tactic, image)
     {
     }
 }

@@ -1,22 +1,27 @@
-using GuerraDeCartas.Domain.Common;
+using GuerraDeCartas.Domain.Enums;
+using GuerraDeCartas.Domain.Tactics;
 
 namespace GuerraDeCartas.Domain.Cards;
 
-public abstract class Card : Entity
+public abstract class Card
 {
-    public string Name { get; protected set; }
-    public CardType Type { get; protected set; }
-    public CardState State { get; protected set; }
+    public Guid Id { get; }
+    public string Name { get; }
+    public CardType Type { get; }
+    public Tactic Tactic { get; }
+    public string Image { get; }
 
-    protected Card(string name, CardType type)
+    protected Card(
+        Guid id,
+        string name,
+        CardType type,
+        Tactic tactic,
+        string image)
     {
+        Id = id;
         Name = name;
         Type = type;
-        State = CardState.Deck;
-    }
-
-    protected void ChangeState(CardState newState)
-    {
-        State = newState;
+        Tactic = tactic;
+        Image = image;
     }
 }

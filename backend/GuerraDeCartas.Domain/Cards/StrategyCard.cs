@@ -1,9 +1,15 @@
+using GuerraDeCartas.Domain.Tactics;
+
 namespace GuerraDeCartas.Domain.Cards;
 
-public abstract class StrategyCard : Card
+public sealed class StrategyCard : Card
 {
-    protected StrategyCard(string name)
-        : base(name, CardType.Strategy)
+    public StrategyCard(
+        Guid id,
+        string name,
+        Tactic tactic,
+        string image)
+        : base(id, name, Enums.CardType.Strategy, tactic, image)
     {
     }
 }

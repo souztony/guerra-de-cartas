@@ -1,22 +1,26 @@
-using GuerraDeCartas.Domain.Common;
+using GuerraDeCartas.Domain.Enums;
+using GuerraDeCartas.Domain.Tactics;
 
 namespace GuerraDeCartas.Domain.Cards;
 
-public abstract class UnitCard : Card
+public sealed class UnitCard : Card
 {
-    public int Offensive { get; protected set; }
-    public int Armor { get; protected set; }
-    public UnitType UnitType { get; protected set; }
+    public UnitCategory Categoria { get; }
+    public int Ofensiva { get; }
+    public int Blindagem { get; }
 
-    protected UnitCard(
+    public UnitCard(
+        Guid id,
         string name,
-        int offensive,
-        int armor,
-        UnitType unitType
-    ) : base(name, CardType.Unit)
+        UnitCategory categoria,
+        int ofensiva,
+        int blindagem,
+        Tactic tactic,
+        string image)
+        : base(id, name, CardType.Unit, tactic, image)
     {
-        Offensive = offensive;
-        Armor = armor;
-        UnitType = unitType;
+        Categoria = categoria;
+        Ofensiva = ofensiva;
+        Blindagem = blindagem;
     }
 }
